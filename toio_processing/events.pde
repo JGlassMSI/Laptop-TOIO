@@ -7,9 +7,9 @@ void keyPressed() {
     //basic motor control w/ duration, specification found at:
     //https://toio.github.io/toio-spec/en/docs/ble_motor/#motor-control-with-specified-duration
     //can use negative numbers to move toio backwards
-    // void motor(int leftSpeed, int rightSpeed, int duration)
+    // void motor(int leftSpeed,1int rightSpeed, int duration)
 
-    cubes[0].motor(115, 115, 5);
+    run = !run;
     break;
 
   case '2': //targeting control
