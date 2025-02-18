@@ -23,7 +23,6 @@ int framerate = 30;
 
 int[] matDimension = {45, 45, 455, 455};
 
-
 //for OSC
 OscP5 oscP5;
 //where to send the commands to
@@ -60,6 +59,10 @@ void setup() {
   }
 }
 
+long last = 0;
+int dir = 1;
+
+int positions[][] = { {200, 200}, {200, 300}, {250, 286} };
 
 
 void draw() {
@@ -96,4 +99,9 @@ void draw() {
   //END TEMPLATE/DEBUG VIEW
   
   //INSERT YOUR CODE HERE!
+  if (now - last > 2000){
+    cubes[0].motor(dir * 10, dir * 10);
+    dir *= -1;
+    last = now;
+  }
 }
